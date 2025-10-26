@@ -84,4 +84,7 @@ World Bank. (n.d.). *CMIP6 MIROC6 mean temperature projections for Malawi under 
 
 
 ## Produced By:
-Jimmy Jay-Jay (Jimmy Edward Matewere) — contact: (jmatewere265@gmail.com)
+
+Jimmy Jay-Jay (Jimmy Edward Matewere) 
+- LinkedIn: [jimmy-matewere-59a116367](https://www.linkedin.com/in/jimmy-matewere-59a116367)
+- Email: jmatewere265@gmail.com
