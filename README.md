@@ -1,34 +1,87 @@
-## Malawi Climate Trends — Temperature & Precipitation
+# Historical Temperature Trend Analysis for Malawi (1950–2100)
 
+This project analyzes long-term **temperature trends in Malawi** using both historical observations and future climate projections.  
+It investigates how mean annual temperatures have evolved between **1950–2014** and estimates future trends up to **2100** using regression modeling and compares the findings .
 
-This repository contains the analysis for historical mean temperature  trends in Malawi. The analysis includes QC, exploration, anomaly calculation, trend detection (Mann–Kendall & Sen's slope), and visualization.
+---
 
+## Project Overview
 
-## Structure
-- `data/raw/` — original downloaded data (do not modify)
-- `data/processed/` — cleaned data ready for analysis and data exports
-- `notebooks/` — Jupyter notebooks for each analysis step
-- `scripts/` — utility scripts used by notebooks
-- `figures/` — generated figures
-- `results/` — tables of trend statistics
+- **Objective:** Detect and interpret Malawi’s temperature trends using historical model data and modeled future climate datasets.  
+- **Scope:** 1950–2100  
+- **Focus Variable:** Mean Annual Temperature  
+- **Key Tasks:**
+  - Data cleaning and transformation  
+  - Mann–Kendall trend test and Sen’s slope estimation  
+  - Linear regression-based prediction (2015–2100)  
+  - Comparison with MIROC6 CMIP6 model (SSP245 scenario)  
+  - Visualization and interpretation of temperature dynamics  
 
+---
 
-## Quick start
-1. Create and activate venv (see requirements below).
-2. Place your CSV (`mean_historical_temp.csv`) in `data/raw/`.
-3. Run `notebooks/01_data_qc.ipynb` to produce a cleaned `data/processed/` file.
-4. Continue with EDA and trend notebooks.
+## Methods and Tools
+
+| Task | Tools / Methods |
+|------|------------------|
+| Data Processing | Python (Pandas, NumPy) |
+| Trend Detection | Mann–Kendall Test, Sen’s Slope Estimator |
+| Regression Modeling | Statsmodels (OLS) |
+| Visualization | Matplotlib, Seaborn |
+| Model Comparison | Pearson Correlation (Default for Pandas) |
+
+---
+
+## Key Findings
+
+- A **statistically significant warming trend** was observed from 1950–2014.  
+- **Sen’s slope** indicated a consistent rise in mean annual temperatures.  
+- Regression modeling projected a **continued warming pattern** toward 2100.  
+- The **Pearson correlation coefficient** between the predicted and MIROC6 model temperatures was approximately **0.73 (p < 0.001)**, showing a **strong, statistically significant positive relationship**.
+
+---
+
+## Personal Reflection
+
+Working on this project allowed me to combine statistical methods with climate science to understand how Malawi’s temperature has changed over time.  
+Through the analysis, I improved my ability to handle, analyze, and visualize large datasets while applying robust statistical techniques.  
+
+The experience reinforced my appreciation for **data-driven climate research** and how such insights can guide adaptation strategies in response to rising temperatures and increasing climate variability in Malawi.
+
+## Future Work
+
+- Extending the model to include *precipitation and additional climate variables*.
+- Performing ensemble comparisons by integrating outputs from *multiple CMIP6 models*.
+- Quantifying and correcting *uncertainty and bias* between predicted and modeled outputs.
+
+---
+
+## Repository Structure
+- data
+- figures
+- notebooks
+- scripts
+- README
+- requirements
+
 
 
 ## Requirements
-See `requirements.txt` (pandas, numpy, matplotlib, xarray, pymannkendall, statsmodels...).
-
+See `requirements.txt` (pandas, numpy, matplotlib, pymannkendall, statsmodels...).
 
 ## Outputs
 - Figures are saved to `figures/`.
-- Computed statistics saved to `results/` as CSV.
-- Generated data saved to `data/processed/` as CSV
+- Generated data saved to `data/processed/` as CSV.
+
+## Data Source
+
+**Historical Data (1950–2014):**  
+World Bank. (n.d.). *CMIP6 MIROC6 historical mean temperature data for Malawi (1950–2014)*. Retrieved October 26, 2025, from [https://cckpapi.worldbank.org/api/v1/cmip6-x0.25_timeseries_tas_timeseries_annual_1950-2014_mean_historical_miroc6_r1i1p1f1_mean/MWI?_format=json](https://cckpapi.worldbank.org/api/v1/cmip6-x0.25_timeseries_tas_timeseries_annual_1950-2014_mean_historical_miroc6_r1i1p1f1_mean/MWI?_format=json)
+
+**Future Projections (2015–2100, SSP2-4.5):**  
+World Bank. (n.d.). *CMIP6 MIROC6 mean temperature projections for Malawi under SSP2-4.5 (2015–2100)*. Retrieved October 26, 2025, from [https://cckpapi.worldbank.org/api/v1/cmip6-x0.25_timeseries_tas_timeseries_annual_2015-2100_mean_ssp245_miroc6_r1i1p1f1_mean/MWI?_format=json](https://cckpapi.worldbank.org/api/v1/cmip6-x0.25_timeseries_tas_timeseries_annual_2015-2100_mean_ssp245_miroc6_r1i1p1f1_mean/MWI?_format=json)
 
 
-## Author
+
+
+## Produced By:
 Jimmy Jay-Jay (Jimmy Edward Matewere) — contact: (jmatewere265@gmail.com)
