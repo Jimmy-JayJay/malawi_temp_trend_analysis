@@ -6,7 +6,7 @@ This repository contains the analysis for historical mean temperature  trends in
 
 ## Structure
 - `data/raw/` — original downloaded data (do not modify)
-- `data/processed/` — cleaned data ready for analysis
+- `data/processed/` — cleaned data ready for analysis and data exports
 - `notebooks/` — Jupyter notebooks for each analysis step
 - `scripts/` — utility scripts used by notebooks
 - `figures/` — generated figures
@@ -27,6 +27,7 @@ See `requirements.txt` (pandas, numpy, matplotlib, xarray, pymannkendall, statsm
 ## Outputs
 - Figures are saved to `figures/`.
 - Computed statistics saved to `results/` as CSV.
+- Generated data saved to `data/processed/` as CSV
 
 
 ## Author
